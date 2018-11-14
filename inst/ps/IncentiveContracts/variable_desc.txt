@@ -1,0 +1,29 @@
+orgvar | var | descr
+contractID | contractID | Specific contract number of each contract
+contrval | contrval | Monetary amount of the winning bid
+planned_days | planned_days | Amount of days planned by the engineers
+actual_days | actual_days | Amount of days the project lasts in total
+planned_hours | planned_hours | Amount of planned hours the project will last
+actual_hours | actual_hours | Amount of the actual worked hours
+planned_workrate | planned_workrate | Planned work rate [in h/d] for the project
+actual_workrate | actual_workrate | Workrate [in h/d] which actually was generated
+penalty | penalty | Time penalties for each day late
+contrval_norm | contrval_norm | Normalized contract value
+dw_norm | dw_norm | Normalized actual days
+hw_norm | hw_norm | Normalized actual hours
+penalty_norm | penalty_norm | Normalized time penalties
+enforcement | enforcement | Observed penalty enforcement realizations (for late) contracts
+late | late | Binary variable. Indicator if a project is late
+outcome | outcome | Outcome used in Ex.1-4 (ontime means d=dT)
+outcome2 | outcome2 | Outcome used Ex. 5-6 (outcome means d=(dT-1,dT])
+usercost | usercost | Social (traffic delay) cost (for the lane rental design) 
+insample_predict | insample_predict | Vector of predictions of the contract is in the sample
+year | year | The year in which the project took place (FE for OLS)
+district | district | The district in which the project took place (FE for OLS)
+primary_activity | primary_activity | Number of activities beside the general construction (FE for OLS)
+rain | rain | Historical rain fall [in inches] in the project location
+snow | snow | Historical snow fall [in inches] in the project location
+big_firm | big_firm | Big firms have a capacity of over $3 million
+instate | instate | Is the company located in or out of state
+firm_backlog_norm | firm_backlog_norm | Normalized backlog of the company
+overlap | overlap | Percentage of the overlap with other own projects

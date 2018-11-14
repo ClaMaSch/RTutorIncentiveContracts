@@ -1,0 +1,12 @@
+Package: RTutorIncentiveContracts
+Type: Package
+Title: RTutor problem set Incentive Contracts
+Version: 0.1
+Date: 2018-14-11
+Author: Claudius Schmid
+Maintainer: Claudius Schmid <claudius.schmid@hotmail.com>
+Description: RTutor problem set IncentiveContracts
+License: Not yet licensed by the author. The default suggestion for licensing is
+	Problem set content: Creative Commons (CC BY-SA)
+	Package code: GPL >= 2.0
+Depends: RTutor, readstata13, dplyr, stargazer, ggplot2, gridExtra, lfe, regtools, ggmap, rmarkdown
