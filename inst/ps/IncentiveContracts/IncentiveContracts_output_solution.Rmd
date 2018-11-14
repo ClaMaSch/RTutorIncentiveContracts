@@ -17,7 +17,6 @@ library(gridExtra)
 library(lfe)
 library(regtools)
 library(ggmap)
-library(rmarkdown)
 library(RTutor)
 source("func.RTutor.r")
 
@@ -1153,9 +1152,9 @@ effectplot(reg.late)
 effectplot(reg.late,numeric.effect = "50-95")
 ```
 
-We can interpret the effectplots as follows. Using default settings (first plot), you can observe the $10$%, the $50$% and the $90$% quantiles under the several explanatory variables. The explanatory variable `shock` has a $10$% quantile of $-3.61$ hours, which corresponds to a *good* productivity shock (less hours needed than expected). If we change the shock to its $90$% quantile ($3.57$ hours - *bad* productivity shock) then the probability that the project is late increases by around $39$% (statistically significant, as we will see). This shows the different effect when things are going very well and when they are going very badly.
+We can interpret the effectplots as follows. Using default settings (first plot), you can observe the $10$%, the $50$% and the $90$% quantiles under the several explanatory variables. The explanatory variable `shock` has a $10$% quantile of $-3.31$ hours, which corresponds to a *good* productivity shock (less hours needed than expected). If we change the shock to its $90$% quantile ($3.1$ hours - *bad* productivity shock) then the probability that the project is late increases by around $35$% (statistically significant, as we will see). This shows the different effect when things are going very well and when they are going very badly.
 
-In the second effectplot are the results for quantile changes. Here we see a quite big effect. Doubling the time penalties of an average contract (from about $27.8$ dollars to $57.6$ dollars a day) has the effect, that the contract would be over $20$% less likely to be late.
+In the second effectplot are the results for quantile changes. Here we see a quite big effect. Doubling the time penalties of an average contract (from about $27.8$ dollars to $57.6$ dollars a day) has the effect, that the contract would be about $20$% less likely to be late.
 
 There is one thing, we have to clarify. Are these effects really statistically significant? To answer this question you have a look at the summary statistics of the regression `reg.late`.
 
@@ -2776,7 +2775,6 @@ The original results were implemented by BL in Matlab and Stata. Since I focused
 ### Info: General preparation of the used data
 
 ```{r "Appendix__81",eval=FALSE}
-library(knitr)
 library(readstata13)
 # original data set by BL
 contract_public = read.dta13("mypath/material/additional/contract_public.dta")
@@ -2860,7 +2858,6 @@ contracts$overlap =  contract_public$overlap
 ### Info: Functions used in the Problem Set
 
 ```{r "Appendix__82",eval=FALSE}
-library(knitr)
 contract.designs = function(H,r,K,tau,L,cD,dT,minus,plus){
   # marginal benefit of delay function (also with good and bad shocks)
   planned_days = dT
