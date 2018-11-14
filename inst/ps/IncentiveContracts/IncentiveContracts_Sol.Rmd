@@ -15,7 +15,7 @@ setwd("C:/Users/Schule/Dropbox/Docs/STUDIUM/MASTERARBEIT/HOSTING/RTutorIncentive
 ps.name = "IncentiveContracts"; sol.file = paste0(ps.name,"_sol.Rmd")
 
 # character vector of all packages you load in the problem set
-libs = c("readstata13","dplyr","stargazer","ggplot2","gridExtra","lfe","regtools","ggmap","rmarkdown")
+libs = c("readstata13","dplyr","stargazer","ggplot2","gridExtra","lfe","regtools","ggmap")
 
 create.ps(sol.file=sol.file, ps.name=ps.name, user.name=NULL,libs=libs, stop.when.finished=FALSE, var.txt.file = "variable_desc.txt", extra.code.file="func.RTutor.r", addons="quiz")
 
@@ -2732,7 +2732,6 @@ The original results were implemented by BL in Matlab and Stata. Since I focused
 #< info "General preparation of the used data"
 
 ```{r eval=FALSE}
-library(knitr)
 library(readstata13)
 # original data set by BL
 contract_public = read.dta13("mypath/material/additional/contract_public.dta")
@@ -2811,7 +2810,6 @@ contracts$overlap =  contract_public$overlap
 #< info "Functions used in the Problem Set""
 
 ```{r eval=FALSE}
-library(knitr)
 contract.designs = function(H,r,K,tau,L,cD,dT,minus,plus){
   # marginal benefit of delay function (also with good and bad shocks)
   planned_days = dT
