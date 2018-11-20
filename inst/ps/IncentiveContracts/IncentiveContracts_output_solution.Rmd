@@ -2352,7 +2352,7 @@ map_subsample = function(center,project){
     geom_point(aes(x=lon[1],y=lat[2]),data=df,color="red",fill = "red",size=125,alpha=0.1) +
     geom_point(aes(x=lon[2],y=lat[2]),data=df,color="red",fill = "red",size=5) +
     labs(x = "Longitude",y = "Latitude")
-}
+}???
 ```
 
 ***

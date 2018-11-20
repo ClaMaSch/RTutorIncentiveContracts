@@ -20,7 +20,7 @@ libs = c("readstata13","dplyr","stargazer","ggplot2","gridExtra","lfe","regtools
 create.ps(sol.file=sol.file, ps.name=ps.name, user.name=NULL,libs=libs, stop.when.finished=FALSE, var.txt.file = "variable_desc.txt", extra.code.file="func.RTutor.r", addons="quiz")
 
 # When you want to solve in the browser
-show.shiny.ps(ps.name, load.sav=FALSE,  sample.solution=FALSE, is.solved=FALSE, catch.errors=TRUE, launch.browser=TRUE)
+show.shiny.ps(ps.name, auto.save.code=TRUE, clear.user=FALSE, is.solved=FALSE, catch.errors=TRUE, launch.browser=TRUE)
 
 stop.without.error()
 ```
@@ -2324,7 +2324,7 @@ map_subsample = function(center,project){
     geom_point(aes(x=lon[1],y=lat[2]),data=df,color="red",fill = "red",size=125,alpha=0.1) +
     geom_point(aes(x=lon[2],y=lat[2]),data=df,color="red",fill = "red",size=5) +
     labs(x = "Longitude",y = "Latitude")
-}
+}???
 ```
 #>
 
