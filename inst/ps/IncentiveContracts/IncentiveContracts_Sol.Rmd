@@ -91,7 +91,6 @@ We will derive in detail how BL estimate the marginal benefit of delay function 
 The Problem Set at hand is set up in exercises and has the following structure. First, we will have a look at the data, which include characteristics (parameters) from highway construction contracts in Minnesota. To handle the data, we will get to know some interesting and useful applications and functions in R. After that we explore a theoretical model, which implies theoretical predictions and we will try to find evidence for these predictions by using the real data. To do so we start with a graphical view on the predictions (like the work rate adjustment) and afterwards we go on with a much more formal approach, using OLS to find evidence for these predictions. After the descriptive analysis we will estimate the marginal benefit of delay function of the contractors of these highway projects. We will use this estimated function to analyze alternative contract strategies. 
 
 
-
 ## Exercise 1 -- Overview  - Starting with R
 
 We will consider contracts from state highway construction projects in Minnesota. Such contracts are normally awarded during an auction. In this problem set we are interested in how time incentives, laid down in the contract, affect the contractors choice of working on a project after the contract was awarded to a contractor (company). The time incentives are implemented by means of penalty payments for ongoing construction.
@@ -2077,7 +2076,7 @@ Press the `check` button below to perform the function `check.error()` which gen
 ```{r optional=TRUE}
 #< task
 # input the file 'estimates.RTutor.csv'
-estimates.next = read.csv2("material/estimates.RTutor.csv")[,]
+estimates.next = read.csv2("estimates.RTutor.csv")[,]
 
 # output the table
 check.error(estimates,estimates.next,planned_days,X)
@@ -2114,7 +2113,7 @@ check.error = function(estimates.current,estimates.next,planned_days,X){
 ```
 #>
 
-With these (small) errors (due to different random variables at the estimation start), we can continue encouraged with the estimates stored in `material/estimates.RTutor.csv`.
+With these (small) errors (due to different random variables at the estimation start), we can continue encouraged with the estimates stored in `estimates.RTutor.csv`.
 
 
 ## Exercise 5.2 -- Results and Fit of the Model
@@ -2149,7 +2148,7 @@ In order to be prepared for the simulation, we have to insert all necessary data
 #< task_notest
 # data sets
 contracts = read.dta13("contracts.dta")
-estimates = read.csv2("material/estimates.RTutor.csv")[,1]
+estimates = read.csv2("estimates.RTutor.csv")[,1]
 shock.estimation = read.csv2("shock.estimation.csv")
 
 # variables
@@ -2344,11 +2343,11 @@ The $traveltime_i$ and the $detourtime_i$ are determined with Google Maps. BL as
 
 Let's zoom in to the Serpent Lake area and do the calculation of the variable $delay_{SerpentLake}$ for this example project. As you can image by now, there will be a detour calculation and so, you first have to read in the detour GPS points. The GPS raw data has been prepared for your usage by downloading them from Google maps, converting them and then storing them in the file `detour_serpentlake.csv`.
 
-The file is stored in the folder extra `material` folder and includes  $180$ longitudes and latitudes, respectively. To insert the data, just press the `check` button. The chunk applies the `head()` function and thus shows the first entries of the coordinates.
+The file is stored in the current folder and includes  $180$ longitudes and latitudes, respectively. To insert the data, just press the `check` button. The chunk applies the `head()` function and thus shows the first entries of the coordinates.
 
 ```{r}
 #< task
-detour_serpentlake = read.csv("material/detour_serpentlake.csv",header = T,sep=";")
+detour_serpentlake = read.csv("detour_serpentlake.csv",header = T,sep=";")
 head(detour_serpentlake)
 #>
 ```
@@ -2441,7 +2440,7 @@ We already inserted the `contracts` data set into the current exercise. We also 
 ```{r}
 #< task_notest
 # additional necessary data sets (besides 'contracts.dta')
-estimates = read.csv2("material/estimates.RTutor.csv")[,1]
+estimates = read.csv2("estimates.RTutor.csv")[,1]
 shock.estimation = read.csv2("shock.estimation.csv")
 
 # nescessary variables
@@ -2650,7 +2649,7 @@ In order to present the results in a more representative way, I wrote a function
 
 ```{r}
 #< task_notest
-sim.results = read.csv2("material/KPI.sim.csv")
+sim.results = read.csv2("KPI.sim.csv")
 KPI.result.table(sim.results)
 #>
 ```
@@ -2688,7 +2687,7 @@ However, these results are only based on $87$ sub sample contracts for which BL 
 
 ```{r}
 #< task
-results.reweighted = read.csv2("material/KPI.reweighted.csv")
+results.reweighted = read.csv2("KPI.reweighted.csv")
 KPI.result.table(results.reweighted)
 #>
 ```

@@ -2091,7 +2091,7 @@ Press the `check` button below to perform the function `check.error()` which gen
 
 ```{r "5_1__63",optional=TRUE}
 # input the file 'estimates.RTutor.csv'
-estimates.next = read.csv2("material/estimates.RTutor.csv")[,]
+estimates.next = read.csv2("estimates.RTutor.csv")[,]
 
 # output the table
 check.error(estimates,estimates.next,planned_days,X)
@@ -2132,7 +2132,7 @@ check.error = function(estimates.current,estimates.next,planned_days,X){
 ***
 
 
-With these (small) errors (due to different random variables at the estimation start), we can continue encouraged with the estimates stored in `material/estimates.RTutor.csv`.
+With these (small) errors (due to different random variables at the estimation start), we can continue encouraged with the estimates stored in `estimates.RTutor.csv`.
 
 
 ## Exercise 5.2 -- Results and Fit of the Model
@@ -2166,7 +2166,7 @@ In order to be prepared for the simulation, we have to insert all necessary data
 ```{r "5_2__65"}
 # data sets
 contracts = read.dta13("contracts.dta")
-estimates = read.csv2("material/estimates.RTutor.csv")[,1]
+estimates = read.csv2("estimates.RTutor.csv")[,1]
 shock.estimation = read.csv2("shock.estimation.csv")
 
 # variables
@@ -2374,10 +2374,10 @@ The $traveltime_i$ and the $detourtime_i$ are determined with Google Maps. BL as
 
 Let's zoom in to the Serpent Lake area and do the calculation of the variable $delay_{SerpentLake}$ for this example project. As you can image by now, there will be a detour calculation and so, you first have to read in the detour GPS points. The GPS raw data has been prepared for your usage by downloading them from Google maps, converting them and then storing them in the file `detour_serpentlake.csv`.
 
-The file is stored in the folder extra `material` folder and includes  $180$ longitudes and latitudes, respectively. To insert the data, just press the `check` button. The chunk applies the `head()` function and thus shows the first entries of the coordinates.
+The file is stored in the current folder and includes  $180$ longitudes and latitudes, respectively. To insert the data, just press the `check` button. The chunk applies the `head()` function and thus shows the first entries of the coordinates.
 
 ```{r "6__70"}
-detour_serpentlake = read.csv("material/detour_serpentlake.csv",header = T,sep=";")
+detour_serpentlake = read.csv("detour_serpentlake.csv",header = T,sep=";")
 head(detour_serpentlake)
 ```
 
@@ -2470,7 +2470,7 @@ We already inserted the `contracts` data set into the current exercise. We also 
 
 ```{r "6__74"}
 # additional necessary data sets (besides 'contracts.dta')
-estimates = read.csv2("material/estimates.RTutor.csv")[,1]
+estimates = read.csv2("estimates.RTutor.csv")[,1]
 shock.estimation = read.csv2("shock.estimation.csv")
 
 # nescessary variables
@@ -2673,7 +2673,7 @@ However, you performed the simulation with $100$ simulations and your results ma
 In order to present the results in a more representative way, I wrote a function (shown in info block below) that generates the following table using `grid.table()` function from the `gridExtra` package and the `KPI.sim.csv` data - including the simulation results of $2500$ simulations. Just press the `check` button.
 
 ```{r "6__77"}
-sim.results = read.csv2("material/KPI.sim.csv")
+sim.results = read.csv2("KPI.sim.csv")
 KPI.result.table(sim.results)
 ```
 
@@ -2719,7 +2719,7 @@ We have also simulated the standard deviation of the contractor's cost. These co
 However, these results are only based on $87$ sub sample contracts for which BL had the traffic delay cost (user cost). Therefore, these results are not representative for all contracts. To make the results representative for all $466$ contracts of the main data set, BL used "propensity score re-weighting". Let's have a look at these re-weighted results to the full sample, based on the results of the sub sample simulation. Please press the `check` button.
 
 ```{r "6__79"}
-results.reweighted = read.csv2("material/KPI.reweighted.csv")
+results.reweighted = read.csv2("KPI.reweighted.csv")
 KPI.result.table(results.reweighted)
 ```
 
